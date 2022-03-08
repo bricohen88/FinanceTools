@@ -31,7 +31,7 @@ private val retrofit = Retrofit.Builder()
 
 interface YahooFinanceApiService {
 
-    @Headers("accept: application/json","x-api-key: ")
+    @Headers("accept: application/json","x-api-key:")
     @GET("v6/finance/quote?region=US&lang=en")
     suspend fun getQuote(@Query("symbols", encoded = true) symbol: String): StockData
 }

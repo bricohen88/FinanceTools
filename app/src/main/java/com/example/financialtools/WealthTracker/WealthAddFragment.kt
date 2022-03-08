@@ -43,10 +43,6 @@ class WealthAddFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val inputStream = resources.openRawResource(R.raw.sampleText)
-        val bufferedInputStream = inputStream.bufferedReader().use {it.readText()}
-
-
         binding.submitStock.setOnClickListener {
             if (binding.stockName.text.isNullOrEmpty()) {
                 binding.stockName.error = "Please enter a stock name"

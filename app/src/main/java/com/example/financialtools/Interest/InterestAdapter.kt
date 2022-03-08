@@ -22,14 +22,11 @@ class InterestAdapter(
     class InterestViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
         val yearTextView: TextView = view.findViewById(R.id.item_year)
         val amountTextView: TextView = view.findViewById(R.id.item_amount)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InterestViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.interest_item,parent,false)
-
-
         return InterestViewHolder(adapterLayout)
 
     }

@@ -35,8 +35,10 @@ class WealthTracker : Fragment() {
 
         stockViewModel.viewModelScope.launch {
             val currentStocks = stockViewModel.retrieveStocksDb()
-            val updateStocks = stockViewModel.getStocks(currentStocks)
-            stockViewModel.updateDbPrices(updateStocks)
+            if (currentStocks.isNotEmpty()) {
+                val updateStocks = stockViewModel.getStocks(currentStocks)
+                stockViewModel.updateDbPrices(updateStocks)
+            }
         }
 
     }
