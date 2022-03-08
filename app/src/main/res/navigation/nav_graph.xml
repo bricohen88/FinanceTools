@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/retireCalc"
+        android:name="com.example.financialtools.RetireCalc"
+        android:label="fragment_retire_calc"
+        tools:layout="@layout/fragment_retire_calc" />
+    <fragment
+        android:id="@+id/interestCalc"
+        android:name="com.example.financialtools.Interest.InterestCalc"
+        android:label="fragment_interest_calc"
+        tools:layout="@layout/fragment_interest_calc" >
+        <action
+            android:id="@+id/action_interestCalc_to_interestCalcResult"
+            app:destination="@id/interestCalcResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.financialtools.Home"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_home2_to_interestCalc"
+            app:destination="@id/interestCalc" />
+        <action
+            android:id="@+id/action_home2_to_retireCalc"
+            app:destination="@id/retireCalc" />
+        <action
+            android:id="@+id/action_home2_to_wealthTracker"
+            app:destination="@id/wealthTracker" />
+    </fragment>
+    <fragment
+        android:id="@+id/interestCalcResult"
+        android:name="com.example.financialtools.Interest.InterestCalcResult"
+        android:label="fragment_interest_calc_result"
+        tools:layout="@layout/fragment_interest_calc_result" >
+        <argument
+            android:name="interest_rate"
+            app:argType="integer" />
+        <argument android:name="starting_amount"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/wealthTracker"
+        android:name="com.example.financialtools.WealthTracker.WealthTracker"
+        android:label="fragment_wealth_tracker"
+        tools:layout="@layout/fragment_wealth_tracker" >
+        <action
+            android:id="@+id/action_wealthTracker_to_wealthAddFragment"
+            app:destination="@id/wealthAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wealthAddFragment"
+        android:name="com.example.financialtools.WealthTracker.WealthAddFragment"
+        android:label="fragment_wealth_add"
+        tools:layout="@layout/fragment_wealth_add" >
+        <action
+            android:id="@+id/action_wealthAddFragment_to_wealthTracker"
+            app:destination="@id/wealthTracker"
+            app:popUpTo="@id/wealthTracker" />
+    </fragment>
+</navigation>

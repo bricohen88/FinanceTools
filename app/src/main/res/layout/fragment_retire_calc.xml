@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RetireCalc">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/retire_calc_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Retirement Calculator"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textAlignment="center"
+        android:layout_margin="8dp"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/current_wealth_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/retire_goal_switch"
+        app:layout_constraintTop_toBottomOf="@+id/retire_calc_header"
+        android:hint="@string/current_wealth"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="4dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/current_wealth_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/monthly_saving_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/retire_goal_switch"
+        app:layout_constraintTop_toBottomOf="@+id/current_wealth_layout"
+        android:hint="@string/monthly_saving"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="4dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/monthly_saving_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/retire_goal_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/retire_goal_switch"
+        app:layout_constraintTop_toBottomOf="@+id/monthly_saving_layout"
+        android:hint="Goal"
+        android:layout_marginStart="8dp"
+        android:layout_marginVertical="4dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/retire_goal_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/retire_goal_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_retire"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/retire_goal_layout"
+        app:layout_constraintTop_toBottomOf="@+id/monthly_saving_layout" />
+
+    <Button
+        android:id="@+id/submit_retire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="4dp"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/retire_goal_layout" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/retirement_year7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        tools:text="at 7%: 10.2 years"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline4"
+        app:layout_constraintBottom_toTopOf="@+id/retirement_year10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/retirement_year10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        tools:text="at 10%: 7 years"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit_retire" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/retirement_year13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadline4"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/retirement_year10"
+        tools:text="at 13%: 4 years" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

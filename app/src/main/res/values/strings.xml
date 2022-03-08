@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Financial Tools</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="compound_interest_calculator">Compound Interest Calculator</string>
+    <string name="launch">Launch</string>
+    <string name="retirement_calculator">Retirement Calculator</string>
+    <string name="home_welcome_message">Select Any Tool</string>
+    <string name="years">Year</string>
+    <string name="amount">Amount</string>
+    <string name="submit">Submit</string>
+    <string name="interest_input_string">Investing £%1$d at %2$d\%%</string>
+    <string name="current_wealth">Current Wealth</string>
+    <string name="monthly_saving">Monthly Saving</string>
+    <string name="retire_answer_seven">at %1$d\%%: %2$.1f years</string>
+</resources>
